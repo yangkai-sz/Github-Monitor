@@ -26,3 +26,28 @@ mysql> show tables;
 14 rows in set (0.00 sec)
 
 mysql> 
+
+vipkid的这个工具的缺陷有：
+1、任务执行过程中不能暂停、终止；
+2、“查询系统”模块的数据，不能批量操作，可能误报多。而且不能删除。所以我来看数据库；
+3、restful的接口具体没研究，需要用token（github要求的）
+4、不能设置条件，例如：必须匹配vivo、但是还可以匹配password；例如es的逻辑：
+--------------
+{
+  "query": {
+    "bool": {
+      "must": {
+        "match": {
+          "field": "vivo"
+        }
+      }, 
+      "should": {
+        "match": {
+          "field": "password"
+        }
+      }
+    }
+  }
+}
+-------------------------
+5、因为误报率高，所以很需要上述的功能；
