@@ -1,0 +1,28 @@
+该监控系统用的是mysql，安装的时候，gitclone没down到env文件，就手动复制下来。其他缺失的没管。进入容器、登录mysql，一共有下面的几个表：
+mysql> use github;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++----------------------------+
+| Tables_in_github           |
++----------------------------+
+| Leakage                    |
+| auth_group                 |
+| auth_group_permissions     |
+| auth_permission            |
+| auth_user                  |
+| auth_user_groups           |
+| auth_user_user_permissions |
+| authtoken_token            |
+| django_admin_log           |
+| django_content_type        |
+| django_migrations          |
+| django_session             |
+| monitor_task               |
+| monitor_token              |
++----------------------------+
+14 rows in set (0.00 sec)
+
+mysql> 
